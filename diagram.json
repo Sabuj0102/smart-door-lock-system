@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "SABUJ DEV",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 403.8, "left": 143.4, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -30.8, "left": 149.6, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 46, "left": -76.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 194.4,
+      "left": -27,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 246, "left": 80.6, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 340.8,
+      "left": 57.05,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd2",
+      "top": 256,
+      "left": 456.8,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "keypad1:R1", "uno:9", "green", [ "v9.6", "h57.6" ] ],
+    [ "keypad1:R2", "uno:8", "green", [ "v19.2", "h57.2" ] ],
+    [ "keypad1:R3", "uno:7", "green", [ "v28.8", "h57.3" ] ],
+    [ "keypad1:R4", "uno:6", "green", [ "v38.4", "h57.4" ] ],
+    [ "keypad1:C1", "uno:5", "blue", [ "v48", "h57.5" ] ],
+    [ "keypad1:C2", "uno:4", "blue", [ "v57.6", "h57.6" ] ],
+    [ "keypad1:C3", "uno:3", "blue", [ "v67.2", "h67.05" ] ],
+    [ "keypad1:C4", "uno:2", "blue", [ "v76.8", "h57.3" ] ],
+    [ "servo1:PWM", "uno:10", "limegreen", [ "h-19.2", "v249.8", "h392.9" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h-38.4", "v326.4", "h249.6", "v201.6", "h182.4" ] ],
+    [ "servo1:V+", "uno:GND.3", "red", [ "h-48", "v336.1", "h240", "v192", "h211.2", "v9.6" ] ],
+    [ "led1:C", "r1:1", "green", [ "v28.8", "h0.4" ] ],
+    [ "r1:2", "uno:GND.1", "black", [ "v325.2", "h144", "v-288" ] ],
+    [ "lcd2:VCC", "uno:5V", "red", [ "h-19.2", "v124.9", "h19.2", "v182.4", "h-124.8" ] ],
+    [ "lcd2:SDA", "uno:A4", "green", [ "h-9.6", "v105.8", "h19.2", "v201.6", "h-48" ] ],
+    [ "lcd2:SCL", "uno:A5", "green", [ "h0", "v86.7", "h19.2", "v220.8", "h-48" ] ],
+    [ "led1:A", "uno:12", "cyan", [ "v57.6", "h172.8", "v9.6" ] ],
+    [ "lcd2:GND", "uno:GND.1", "black", [ "h-38.4", "v105.6", "h-163.2", "v-19.2" ] ],
+    [ "bz1:2", "uno:11", "yellow", [ "v105.6", "h278", "v9.6" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v115.2", "h9.6" ] ]
+  ],
+  "dependencies": {}
+}
